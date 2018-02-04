@@ -6,61 +6,93 @@
         Dim button As Button = CType(sender, Button)
 
         If button.Name = "Num1" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "1"
         End If
 
 
         If button.Name = "Num2" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "2"
         End If
 
 
         If button.Name = "Num3" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "3"
         End If
 
 
         If button.Name = "Num4" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "4"
         End If
 
 
         If button.Name = "Num5" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "5"
         End If
 
 
         If button.Name = "Num6" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "6"
         End If
 
 
         If button.Name = "Num7" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "7"
         End If
 
 
         If button.Name = "Num8" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "8"
         End If
 
 
         If button.Name = "Num9" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "9"
         End If
 
 
         If button.Name = "Num0" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "0"
         End If
 
         If button.Name = "NumDot" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "."
         End If
 
 
         If button.Name = "OpEquals" Then
-
             Try
                 Dim equation As String = TextBox1.Text
                 Dim result = New DataTable().Compute(equation, Nothing)
@@ -69,6 +101,7 @@
             Catch ex As SyntaxErrorException
                 TextBox1.Text = "Error"
             End Try
+
         End If
 
         If button.Name = "OpMultiply" Then
@@ -85,15 +118,17 @@
 
 
         If button.Name = "OpMinus" Then
+            If TextBox1.Text = "0" Then
+                TextBox1.Text = ""
+            End If
             TextBox1.Text = TextBox1.Text + "-"
         End If
 
         If button.Name = "OpClear" Then
-            TextBox1.Text = ""
+            TextBox1.Text = "0"
         End If
-
-
     End Sub
+
     Sub infin()
         If TextBox1.Text = "∞" Then
             TextBox1.Text = "Error"
