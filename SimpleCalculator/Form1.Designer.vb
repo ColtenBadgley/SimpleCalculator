@@ -41,6 +41,8 @@ Partial Class Form1
         Me.OpMultiply = New System.Windows.Forms.Button()
         Me.OpDivide = New System.Windows.Forms.Button()
         Me.OpClear = New System.Windows.Forms.Button()
+        Me.numsqrt = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -259,6 +261,32 @@ Partial Class Form1
         Me.OpClear.TabIndex = 17
         Me.OpClear.UseVisualStyleBackColor = False
         '
+        'numsqrt
+        '
+        Me.numsqrt.BackColor = System.Drawing.Color.Transparent
+        Me.numsqrt.FlatAppearance.BorderSize = 0
+        Me.numsqrt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.numsqrt.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.numsqrt.Location = New System.Drawing.Point(5, 164)
+        Me.numsqrt.Name = "numsqrt"
+        Me.numsqrt.Size = New System.Drawing.Size(110, 44)
+        Me.numsqrt.TabIndex = 18
+        Me.numsqrt.Text = "√"
+        Me.numsqrt.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, -1)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(16, 16)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "√"
+        Me.Label1.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -266,6 +294,8 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(340, 302)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.numsqrt)
         Me.Controls.Add(Me.OpClear)
         Me.Controls.Add(Me.OpPlus)
         Me.Controls.Add(Me.OpMinus)
@@ -312,4 +342,6 @@ Partial Class Form1
     Friend WithEvents OpMultiply As Button
     Friend WithEvents OpDivide As Button
     Friend WithEvents OpClear As Button
+    Friend WithEvents numsqrt As Button
+    Friend WithEvents Label1 As Label
 End Class

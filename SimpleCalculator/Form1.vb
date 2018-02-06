@@ -1,7 +1,9 @@
 ﻿Public Class Form1
+    Dim sqrtresult As String
+    Dim sqrtequ As Double
+    Dim sqrtclick As Boolean
 
-
-    Public Sub ButtonClickMethod(sender As Object, e As EventArgs) Handles Num0.Click, Num1.Click, Num2.Click, Num3.Click, Num4.Click, Num5.Click, Num6.Click, Num7.Click, Num8.Click, Num9.Click, NumDot.Click, OpEquals.Click, OpPlus.Click, OpMinus.Click, OpMultiply.Click, OpDivide.Click, OpClear.Click
+    Public Sub ButtonClickMethod(sender As Object, e As EventArgs) Handles Num0.Click, Num1.Click, Num2.Click, Num3.Click, Num4.Click, Num5.Click, Num6.Click, Num7.Click, Num8.Click, Num9.Click, NumDot.Click, OpEquals.Click, OpPlus.Click, OpMinus.Click, OpMultiply.Click, OpDivide.Click, OpClear.Click, numsqrt.Click
 
         Dim button As Button = CType(sender, Button)
 
@@ -11,7 +13,6 @@
             End If
             TextBox1.Text = TextBox1.Text + "1"
         End If
-
 
         If button.Name = "Num2" Then
             If TextBox1.Text = "0" Then
@@ -93,15 +94,22 @@
 
 
         If button.Name = "OpEquals" Then
-            Try
-                Dim equation As String = TextBox1.Text
-                Dim result = New DataTable().Compute(equation, Nothing)
-                TextBox1.Text = result
-                Call infin()
-            Catch ex As SyntaxErrorException
-                TextBox1.Text = "Error"
-            End Try
-
+            If sqrtclick = False Then
+                Try
+                    Dim equation As String = TextBox1.Text
+                    Dim result = New DataTable().Compute(equation, Nothing)
+                    TextBox1.Text = result
+                    Call infin()
+                Catch ex As SyntaxErrorException
+                    TextBox1.Text = "Error"
+                End Try
+            ElseIf sqrtclick = True Then
+                sqrtequ = TextBox1.Text
+                sqrtresult = Math.Sqrt(sqrtequ)
+                TextBox1.Text = sqrtresult
+                Label1.Visible = False
+                sqrtclick = False
+            End If
         End If
 
         If button.Name = "OpMultiply" Then
@@ -126,6 +134,12 @@
 
         If button.Name = "OpClear" Then
             TextBox1.Text = "0"
+            sqrtclick = False
+            Label1.Visible = False
+        End If
+        If button.Name = "numsqrt" Then
+            Label1.Visible = True
+            sqrtclick = True
         End If
     End Sub
 
@@ -134,6 +148,4 @@
             TextBox1.Text = "Error"
         End If
     End Sub
-
-
 End Class
